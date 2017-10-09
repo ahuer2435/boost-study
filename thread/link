@@ -1,0 +1,3 @@
+http://www.linuxidc.com/Linux/2011-07/39215p10.htm
+1. g++ thread_base.cpp -lboost_system -lboost_thread
+2. g++ sync_unique.cpp -lboost_system -lboost_thread -lpthread
