@@ -24,13 +24,13 @@ int main(int argc, char* argv[])
       return 1;
     }
 
-    boost::asio::io_service io_service;
+    boost::asio::io_service io_s;
 
-    tcp::resolver resolver(io_service);
+    tcp::resolver resolver(io_s);
     tcp::resolver::query query(argv[1], "daytime");
     tcp::resolver::iterator endpoint_iterator = resolver.resolve(query);
 
-    tcp::socket socket(io_service);
+    tcp::socket socket(io_s);
     std::cout << "start connect..." << std::endl;
     boost::asio::connect(socket, endpoint_iterator);
     std::cout << "connected." << std::endl;
